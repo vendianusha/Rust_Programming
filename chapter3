@@ -1,0 +1,85 @@
+1.fn main() {
+    let number = -5;
+   
+    if number > 0 {
+        println!("Positive");
+    } else if number < 0 {
+        println!("Negative");
+    } else {
+        println!("Zero");
+    }
+}
+output:
+Negative
+
+
+2.fn main() {
+    let number = 7;
+   
+    if number % 2 == 0 {
+        println!("{} is even", number);
+    } else {
+        println!("{} is odd", number);
+    }
+}
+output:
+7 is odd
+
+
+3.fn main() {
+    let num1 = 10.0;
+    let num2 = 5.0;
+    let op = '+';
+    let result = match op {
+        '+' => num1 + num2,
+        '-' => num1 - num2,
+        '*' => num1 * num2,
+        '/' => num1 / num2,
+        _ => {
+            println!("Invalid operator");
+            return;
+        }
+    };
+
+    println!("{} {} {} = {}", num1, op, num2, result);
+}
+output:
+10 + 5 = 15
+
+
+4.fn main() {
+    let some_value = Some(5);
+   
+    if let Some(x) = some_value {
+        println!("Found value in Option: {}", x);
+    } else {
+        println!("No value found");
+    }
+    let result: Result<i32, &str> = Ok(42);
+   
+    if let Ok(num) = result {
+        println!("Successfully got: {}", num);
+    } else if let Err(e) = result {
+        println!("Error occurred: {}", e);
+    }
+    let number = 7;
+   
+    if let 7 = number {
+        println!("Lucky number 7!");
+    } else {
+        println!("Not the lucky number");
+    }
+    let age = 25;
+   
+    if let 18..=30 = age {
+        println!("Age {} is in young adult range", age);
+    } else {
+        println!("Age {} is outside young adult range", age);
+    }
+}
+
+output:
+Found value in Option: 5
+Successfully got: 42
+Lucky number 7!
+Age 25 is in young adult range

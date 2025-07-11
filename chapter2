@@ -1,0 +1,62 @@
+1 .fn main() {
+    let num = 10;
+    let num_float = num as f32;
+    println!("Integer {} as float: {}", num, num_float);
+    let pi = 3.14;
+    let pi_int = pi as i32;
+    println!("Float {} as integer: {}", pi, pi_int);
+    let letter = 'A';
+    let ascii = letter as u8;
+    println!("Character '{}' as ASCII: {}", letter, ascii);
+    let flag = true;
+    let flag_num = flag as i32;
+    println!("Boolean {} as integer: {}", flag, flag_num);
+  }
+output:
+Integer 10 as float: 10
+Float 3.14 as integer: 3
+Character 'A' as ASCII: 65
+Boolean true as integer: 1
+
+2.fn main() {
+    let x = 10;
+    let x_ref = &x;
+    println!("Original value: {}", x);
+    println!("Reference: {}", x_ref);
+    println!("Dereferenced value: {}", *x_ref);
+    let mut y = 20;
+    println!("\nOriginal y: {}", y);
+    {
+        let y_ref = &mut y;
+        *y_ref += 5;
+        println!("Modified through reference: {}", y_ref);
+    }
+    println!("After modification: {}", y);
+    let z = 30;
+    println!("\nOriginal z: {}", z);
+    print_value(&z);
+    add_one(&mut y);
+    println!("After add_one: {}", y);
+}
+
+fn print_value(num: &i32) {
+    println!("Printing through reference: {}", num);
+    println!("Dereferenced inside function: {}", *num);
+}
+
+fn add_one(num: &mut i32) {
+    *num += 1;
+}
+output:
+Original value: 10
+Reference: 10
+Dereferenced value: 10
+
+Original y: 20
+Modified through reference: 25
+After modification: 25
+
+Original z: 30
+Printing through reference: 30
+Dereferenced inside function: 30
+After add_one: 26

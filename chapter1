@@ -1,0 +1,99 @@
+1. fn main() {
+    println!("Hello, world!");
+   }
+output:
+  Hello, world!
+
+2. fn main() {
+    for i in 1..=5 {
+        for _ in 0..i {
+            print!("{}", i);
+        }
+        println!();
+    }
+}
+output:
+1
+22
+333
+4444
+55555
+
+3. fn main() {
+    let mut x = 1000;
+    let y = "Programming";
+    println!("x = {}, y = {}", x, y);
+    x = 1100;
+    println!("x = {}, y = {}", x, y);
+}
+ouput:
+x = 1000, y = Programming
+x = 1100, y = Programming
+
+4.fn main() {
+    let x = 5;
+    println!("Outer x = {}", x);
+    {
+        let x = 10;
+        println!("Inner x (shadowed) = {}", x);
+    }
+    println!("Outer x after inner block = {}", x);
+    let x = x + 1;
+    println!("Outer x after shadowing = {}", x);
+}
+output:
+Outer x = 5
+Inner x (shadowed) = 10
+Outer x after inner block = 5
+Outer x after shadowing = 6
+
+5.fn main() {
+    let a = 42;          
+    let b = 3.14;        
+    let c = "Rust";      
+    println!("Implicit types:");
+    println!("a = {}, b = {}, c = {}", a, b, c);
+   
+    let x: i32 = 100;
+    let y: f64 = 6.28;
+    let z: &str = "Programming";
+    println!("\nExplicit types:");
+    println!("x = {}, y = {}, z = {}", x, y, z);
+}
+output:
+Implicit types:
+a = 42, b = 3.14, c = Rust
+
+Explicit types:
+x = 100, y = 6.28, z = Programming
+
+6.fn main() {
+    let arr: [i32; 6] = [0, 2, 4, 6, 8, 10];
+    let is_even: bool = true;
+    let letter: char = 'R';
+    let pi: f64 = 3.14;
+    let message: &str = "Rust Programming";
+    println!("Array values (divisible by 2 from 0 to 10):");
+    for num in arr.iter() {
+        println!("{}", num);
+    }
+    println!("\nOther data types demonstration:");
+    println!("Boolean (is_even): {}", is_even);
+    println!("Character (letter): {}", letter);
+    println!("Floating-point (pi): {}", pi);
+    println!("String slice (message): {}", message);
+}
+output:
+Array values (divisible by 2 from 0 to 10):
+0
+2
+4
+6
+8
+10
+
+Other data types demonstration:
+Boolean (is_even): true
+Character (letter): R
+Floating-point (pi): 3.14
+String slice (message): Rust Programming
